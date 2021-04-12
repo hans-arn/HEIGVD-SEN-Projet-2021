@@ -1,8 +1,8 @@
 ### Phishing tools : 
 
-- GoPhish
+- GoPhish https://getgophish.com/ (lancement d'une campagne de phishing) -> fonctionne parfaitement selon leur site, semble + officiel que certains autres, documentation très complète
 
-- King Phisher https://github.com/rsmusllp/king-phisher
+- King Phisher https://github.com/rsmusllp/king-phisher 
 
 ### Information gathering : 
 
@@ -12,6 +12,7 @@
 - seeker https://github.com/thewhiteh4t/seeker (localisation & récupération d'infos sur un appareil)
 - whatbreach https://github.com/ekultek/whatbreach (récupération d'informations à partir d'un e-mail)
 
-- instagramOSINT https://github.com/sc1341/InstagramOSINT (récupération d'informations à partir d'un username instagram) -> pas ultra utile 
+- instagramOSINT https://github.com/sc1341/InstagramOSINT (récupération d'informations à partir d'un username instagram) -> trouve les informations publiques de profil Instagram, intéressant pour automatiser une recherche d'informations sur des noms d'utilisateurs
 
 - hunter.io (compte gratuit à créer)
+
