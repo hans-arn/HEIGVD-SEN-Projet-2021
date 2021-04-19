@@ -114,7 +114,7 @@ L'outil est très bien imaginé et son but est clair : lancer des campagnes de p
 
 L'outil est très utile et permet d'automatiser de nombreuses tâches telles que le clonage d'une page et l'envoi en masse d'e-mails. 
 
-### 1.2 Outil 2 ?
+### 1.2 SpiderFoot
 
 #### 1.2.1 Introduction 
 
@@ -132,7 +132,7 @@ L'outil est très utile et permet d'automatiser de nombreuses tâches telles que
 
 (utilité, intérêt, facilité)
 
-### 1.3 Outil 3 ?
+### 1.3 instagramOSINT
 
 #### 1.3.1 Introduction
 
@@ -147,6 +147,24 @@ L'outil est très utile et permet d'automatiser de nombreuses tâches telles que
 #### 1.3.4 Démonstration
 
 #### 1.3.5 Conclusion 
+
+(utilité, intérêt, facilité)
+
+### 1.4 xxx
+
+#### 1.4.1 Introduction
+
+ (à quoi il sert, OS, payant/gratuit, opensource ?)
+
+#### 1.4.2 Installation
+
+#### 1.4.3 Utilisation 
+
+(comment il s'utilise ?)
+
+#### 1.4.4 Démonstration
+
+#### 1.4.5 Conclusion 
 
 (utilité, intérêt, facilité)
 
