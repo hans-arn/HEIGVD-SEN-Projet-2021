@@ -150,7 +150,7 @@ L'outil est très utile et permet d'automatiser de nombreuses tâches telles que
 
 (utilité, intérêt, facilité)
 
-### 1.4 xxx
+### 1.4 Sherlock
 
 #### 1.4.1 Introduction
 
