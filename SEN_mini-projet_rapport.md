@@ -154,19 +154,64 @@ L'outil est très utile et permet d'automatiser de nombreuses tâches telles que
 
 #### 1.4.1 Introduction
 
- (à quoi il sert, OS, payant/gratuit, opensource ?)
+Sherlock est un outil gratuit et opensource, disponible sur Github. Il permet de rechercher des noms d'utilisateur sur différents sites nécessitant une authentification. En explorant le repo Github, on peut voir que la communauté est très active et que des `commit` sont faits très régulièrement. L'outil est encore en développement et cela implique que certains bugs peuvent encore arriver. 
+
+Le problème le plus récurrent est l'apparition de faux positifs : Sherlock indique qu'un compte correspondant au nom d'utilisateur fourni existe et donne un lien sur ce compte mais en suivant ce lien, le site indique qu'aucun compte sous ce nom n'existe. 
+
+Sherlock peut être utilisé sous Linux et Windows, ainsi qu'avec Docker.
 
 #### 1.4.2 Installation
 
+L'installation de Sherlock est rapide et très facile. La procédure suivante a été testée sur une machine Ubuntu 20.04 : 
+
+- Cloner le repo git https://github.com/sherlock-project/sherlock.git
+- Installer les dépendances demandées
+
+```shell
+// Commandes à effectuer :
+
+$ git clone https://github.com/sherlock-project/sherlock.git
+$ cd sherlock
+$ python3 -m pip install -r requirements.txt
+```
+
 #### 1.4.3 Utilisation 
 
-(comment il s'utilise ?)
+Pour lancer l'outil Sherlock, il suffit de taper la commande : 
+
+```shell
+// En sollicitant la commande help, les options suivantes sont proposées : 
+$ python3 sherlock.py --help
+usage: sherlock.py [-h] [--version] [--verbose] 
+						[--folderoutput FOLDEROUTPUT] [--output OUTPUT] [--tor] 
+						[--unique-tor] [--csv] [--site SITE_NAME] 
+                   		[--proxy PROXY_URL] [--json JSON_FILE] 
+                   		[--timeout TIMEOUT] [--print-all] [--print-found]
+                   		[--no-color] [--browse] [--local] USERNAMES [USERNAMES ...]
+
+// Le seul paramètre obligatoire à fournir est donc un ou plusieurs usernames
+$ python3 sherlock.py [USERNAMES ...]
+```
+
+Les noms d'utilisateurs à fournir peuvent être utilisés sur n'importe quel site. Sherlock possède une liste de sites web qu'il va tester avec le nom d'utilisateur fourni. 
+
+Il peut être nécessaire de modifier le fichier `sites.md` pour ajouter des sites web. 
 
 #### 1.4.4 Démonstration
 
+En entrant la commande indiquée au paragraphe précédent et en indiquant un nom d'utilisateur (ici, `c.woj`), le script effectue sa recherche en concaténant les liens qu'il connait pour les sites recensés dans le fichier `sites.md` et le nom d'utilisateur. 
+
+![](images/SEN_projet_Sherlock1.png)
+
+Les profils correspondant au(x) nom(s) d'utilisateur fournis sont listés dans le terminal mais également dans un fichier texte généré à la fin de l'exécution du script. Les liens renvoyés ne correspondent pas forcément au profil de la personne ciblée car les noms d'utilisateurs peuvent être utilisés par des personnes différentes. 
+
 #### 1.4.5 Conclusion 
 
-(utilité, intérêt, facilité)
+L'utilisation de l'outil Sherlock est très facile, la prise en main est très rapide. L'installation se fait en deux commandes et il suffit de parcourir rapidement l'aide proposée pour comprendre comment utiliser l'outil. 
+
+Le problème qu'il est intéressant de soulever est l'apparition de faux positifs. Cela remet un peu en question l'intérêt de l'outil. Si on recherche un nom d'utilisateur et que plusieurs dizaines de sites sont indiqués comme comportant un compte lié au nom, mais que finalement ce sont tous ou presque des faux positifs, la recherche n'aura pas été très utile. 
+
+La recommandation que nous faisons est de suivre le développement de l'outil et de commencer à l'utiliser quand ce bug sera résolu. 
 
 ## 2 Recherche d'informations sur une cible
 
