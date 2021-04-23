@@ -136,19 +136,66 @@ L'outil est très utile et permet d'automatiser de nombreuses tâches telles que
 
 #### 1.3.1 Introduction
 
- (à quoi il sert, OS, payant/gratuit, opensource ?)
+InstagramOSINT sert à récupérer des informations venant d'un compte instagram. Les informations pouvant être obtenues sont :
+
+- Nom du profil
+- L’URL et L’URL de la photo de profil
+- Les statistiques du compte
+- Le type du compte
+- S'il est relié à Facebook
+- S'il est privé ou vérifié
+
+On peut aussi télécharger les photos, si le compte est publique.
+
+Il a été testé sur un environnement GNU/Linux mais étant donné qu'il s'agit d'un script python à exécuter cela devrait fonctionné sur toutes les plateformes. Il est disponible sur un github. 
 
 #### 1.3.2 Installation
 
-#### 1.3.3 Utilisation 
+Ce programme nécessite comme prérequis, **python3.6** au minimum. Si cela n'est pas votre cas, je vous redirige vers [python3](https://www.python.org/downloads/). Quand cela est fait vous pouvez cloner le repository et  télécharger toutes les dépendances.
 
-(comment il s'utilise ?)
+````shell
+git clone https://github.com/hans-arn/InstagramOSINT.git
+cd InstagramOSINT 
+pip3 install -r requirements.txt
+````
+
+Votre outil est désormais prêt à fonctionner.
+
+####  1.3.3 Utilisation 
+
+Pour son utilisation, nous devons déjà possédé des pseudo instagram ou non pour vérifier si le compte existe. 
 
 #### 1.3.4 Démonstration
 
+##### Compte inexistant 
+
+Nous avons testé avec un compte inexistant pour voir comment réagit le programme.
+
+![](images/inst_404.png)
+
+### Compte d'une personne normale  
+
+![](images/inst_jerome_trailer.png)
+
+##### Compte plus connu
+
+Les avantages d'un compte plus connu sont les informations supplémentaires que l'on peut avoir. Un URL externe, la catégorie de business. 
+
+![](images/inst_pi.png)
+
+##### Récupération d'images
+
+On peut voir que toutes les images présentent sur ce compte seront téléchargées localement.
+
+![](images/inst_pic.png)
+
 #### 1.3.5 Conclusion 
 
-(utilité, intérêt, facilité)
+L'utilité principale est bien évidemment la récolte d'informations pour par exemple créer un faux compte pour piéger une victime. Les informations peuvent aussi directement nous servir pour en apprendre plus sur la personne visée. 
+
+L'avantage de cette outil, c'est qu'on peut modifier le script python pour l'adapter à nos besoins (ex: itérer sur une liste de nom d'utilisateurs). Mais cela reste difficile d'accès car le script n'est pas ou peu documenté. De plus, il n'est plus maintenu, donc si instagram venait à changer ses interfaces, cet outil ne servirait plus à rien.
+
+Pour la petite anecdotes, nous avons réparer le script à partir des Issues. 
 
 ### 1.4 Sherlock
 
