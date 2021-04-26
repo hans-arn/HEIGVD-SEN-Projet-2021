@@ -120,17 +120,59 @@ L'outil est très utile et permet d'automatiser de nombreuses tâches telles que
 
 (à quoi il sert, OS, payant/gratuit, opensource ?)
 
+SpiderFoot est un outil de recherche d'informations opensource sur une cible donnée. Il est disponible sur tous les OS les plus courants. Il permet entre-autre d'automatiser la recherche d'information sur une entreprise à partir de base de données publiques ou d'obtenir des informations à partir d'un nom d'utilisateur.
+
 #### 1.2.2 Installation
+
+Il y a plusieurs moyen d'installer cet outil. On peut utiliser un gestionnaire de paquets. On peut aussi le télécharger directement depuis github via les instructions suivantes tirées de leurs README.
+
+````sh
+$ wget https://github.com/smicallef/spiderfoot/archive/v3.3.tar.gz
+$ tar zxvf v3.3.tar.gz
+$ cd spiderfoot
+$ pip3 install -r requirements.txt
+````
 
 #### 1.2.3 Utilisation 
 
-(comment il s'utilise ?)
+Pour lancer l'interface web:
+
+````sh
+$ python3 ./sf.py -l 127.0.0.1:5001
+````
+
+Puis ouvrir dans votre navigateur préféré, l'adresse ci-dessus. Il suffira ensuite d'aller sur l'onglet **New Scan**, d'entrer un nom et une cible selon les explications à droite des entrées utilisateur. 
+
+![](images/spiderfoot_web.png)
+
+Une fois cela effectué, on peut choisir les options du scan. Par Use case, par donnée voulues ou par module.
 
 #### 1.2.4 Démonstration
 
+Pour un premier scan, j'ai décidé de prendre l'option all inclusive sur le domain de l'Heig. 
+
+![](images/spiderfoot_all.png)
+
+Avec le scan du nom de domaine Heig, nous obtenons plus de 110 résultats. Cela peut être par exemple le bitbucket ou une archive du site internet, des adresses IP. Cependant certaines données ne sont pas toujours utilisable ou exact.
+
+![](images/spiderFoot_heig.png)
+
+Pour le deuxième scan, j'ai choisit des données que je voulais sur le domaine de **nestle.com**. Les données qui ont été sélectionnées sont:
+
+- compagny name
+- Compromised Password
+- Domain Whois
+- Hacked Email Address
+
+Voici le résultat que l'on obtient avec seulement 4 données choisies. Nous avons plus de 500 résultats unique.
+
+![](images/spiderFoot_nestle.png)
+
 #### 1.2.5 Conclusion 
 
-(utilité, intérêt, facilité)
+SpiderFoot est très intéressant quand il s'agit de rechercher des données sur entreprises et des adresses mail. En revanche, et comme pour beaucoup d'outils, quand il s'agit d'une personne individuelle on obtient peu de résultat.
+
+Pour conclure, nous avons certes pas mal de de résultat mais certains doivent être triés car ils sont erronés ou carrément faux ou parfois des données ne sont pas très utiles.
 
 ### 1.3 instagramOSINT
 
