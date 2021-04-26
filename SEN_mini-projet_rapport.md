@@ -118,15 +118,15 @@ L'outil est très utile et permet d'automatiser de nombreuses tâches telles que
 
 #### 1.2.1 Introduction 
 
-(à quoi il sert, OS, payant/gratuit, opensource ?)
-
-SpiderFoot est un outil de recherche d'informations opensource sur une cible donnée. Il est disponible sur tous les OS les plus courants. Il permet entre-autre d'automatiser la recherche d'information sur une entreprise à partir de base de données publiques ou d'obtenir des informations à partir d'un nom d'utilisateur.
+SpiderFoot est un outil de recherche d'informations opensource sur une cible donnée. Il est disponible sur tous les OS les plus courants. Il permet entre-autre d'automatiser la recherche d'informations sur une entreprise à partir de bases de données publiques ou d'obtenir des informations à partir d'un nom d'utilisateur.
 
 #### 1.2.2 Installation
 
-Il y a plusieurs moyen d'installer cet outil. On peut utiliser un gestionnaire de paquets. On peut aussi le télécharger directement depuis github via les instructions suivantes tirées de leurs README.
+Il y a plusieurs moyen d'installer cet outil. On peut utiliser un gestionnaire de paquets et on peut aussi le télécharger directement depuis Github via les instructions suivantes tirées de leur `README.md`.
 
 ````sh
+// Commandes à effectuer :
+
 $ wget https://github.com/smicallef/spiderfoot/archive/v3.3.tar.gz
 $ tar zxvf v3.3.tar.gz
 $ cd spiderfoot
@@ -135,44 +135,44 @@ $ pip3 install -r requirements.txt
 
 #### 1.2.3 Utilisation 
 
-Pour lancer l'interface web:
+Pour lancer l'interface web, exécutez la commande suivante :
 
 ````sh
 $ python3 ./sf.py -l 127.0.0.1:5001
 ````
 
-Puis ouvrir dans votre navigateur préféré, l'adresse ci-dessus. Il suffira ensuite d'aller sur l'onglet **New Scan**, d'entrer un nom et une cible selon les explications à droite des entrées utilisateur. 
+Puis ouvrir dans votre navigateur préféré l'adresse ci-dessus. Il suffira ensuite d'aller sur l'onglet **New Scan**, d'entrer un nom et une cible selon les explications à droite des entrées utilisateur. 
 
 ![](images/spiderfoot_web.png)
 
-Une fois cela effectué, on peut choisir les options du scan. Par Use case, par donnée voulues ou par module.
+Une fois cela effectué, on peut choisir les options du scan. Par "use case", par donnée voulues ou par module.
 
 #### 1.2.4 Démonstration
 
-Pour un premier scan, j'ai décidé de prendre l'option all inclusive sur le domain de l'Heig. 
+Pour un premier scan, nous décidons de prendre l'option `all inclusive` sur le domaine de la HEIG-VD. 
 
 ![](images/spiderfoot_all.png)
 
-Avec le scan du nom de domaine Heig, nous obtenons plus de 110 résultats. Cela peut être par exemple le bitbucket ou une archive du site internet, des adresses IP. Cependant certaines données ne sont pas toujours utilisable ou exact.
+Avec le scan du nom de domaine `heig-vd.ch`, nous obtenons plus de 110 résultats. Cela peut être par exemple le bitbucket ou une archive du site internet, des adresses IP, ... Cependant certaines données ne sont pas toujours utilisables ou exactes.
 
 ![](images/spiderFoot_heig.png)
 
-Pour le deuxième scan, j'ai choisit des données que je voulais sur le domaine de **nestle.com**. Les données qui ont été sélectionnées sont:
+Pour le deuxième scan, nous choisissons certaines données sur le domaine de `nestle.com`. Les données qui ont été sélectionnées sont :
 
-- compagny name
+- Company Name
 - Compromised Password
 - Domain Whois
 - Hacked Email Address
 
-Voici le résultat que l'on obtient avec seulement 4 données choisies. Nous avons plus de 500 résultats unique.
+Voici le résultat que l'on obtient avec seulement 4 données choisies. Nous avons plus de 500 résultats uniques :
 
 ![](images/spiderFoot_nestle.png)
 
 #### 1.2.5 Conclusion 
 
-SpiderFoot est très intéressant quand il s'agit de rechercher des données sur entreprises et des adresses mail. En revanche, et comme pour beaucoup d'outils, quand il s'agit d'une personne individuelle on obtient peu de résultat.
+SpiderFoot est très intéressant quand il s'agit de rechercher des données sur des entreprises et des adresses mail. En revanche, et comme pour beaucoup d'outils, quand il s'agit d'une personne individuelle on obtient peu de résultat.
 
-Pour conclure, nous avons certes pas mal de de résultat mais certains doivent être triés car ils sont erronés ou carrément faux ou parfois des données ne sont pas très utiles.
+Nous obtenons effectivement de nombreux résultats mais il faut se montrer prudent, les analyser et  les trier car certains sont faux ou inutiles.
 
 ### 1.3 instagramOSINT
 
@@ -181,63 +181,67 @@ Pour conclure, nous avons certes pas mal de de résultat mais certains doivent �
 InstagramOSINT sert à récupérer des informations venant d'un compte instagram. Les informations pouvant être obtenues sont :
 
 - Nom du profil
-- L’URL et L’URL de la photo de profil
+- L’URL du compte et celle de la photo de profil
 - Les statistiques du compte
 - Le type du compte
 - S'il est relié à Facebook
 - S'il est privé ou vérifié
 
-On peut aussi télécharger les photos, si le compte est publique.
+On peut aussi télécharger les photos, si le compte est public.
 
-Il a été testé sur un environnement GNU/Linux mais étant donné qu'il s'agit d'un script python à exécuter cela devrait fonctionné sur toutes les plateformes. Il est disponible sur un github. 
+L'outil a été testé sur un environnement GNU/Linux mais étant donné qu'il s'agit d'un script python à exécuter cela devrait fonctionner sur toutes les plateformes. Il est disponible sur Github. 
 
 #### 1.3.2 Installation
 
-Ce programme nécessite comme prérequis, **python3.6** au minimum. Si cela n'est pas votre cas, je vous redirige vers [python3](https://www.python.org/downloads/). Quand cela est fait vous pouvez cloner le repository et  télécharger toutes les dépendances.
+Ce programme nécessite **python 3.6** au minimum (en cas de besoin, téléchargez [python3](https://www.python.org/downloads/)). L'installation consiste à cloner le repo Github puis à installer les dépendances contenues dans le fichier `requirements.txt`. 
 
 ````shell
-git clone https://github.com/hans-arn/InstagramOSINT.git
-cd InstagramOSINT 
-pip3 install -r requirements.txt
+// Commandes à effectuer : 
+
+$ git clone https://github.com/hans-arn/InstagramOSINT.git
+$ cd InstagramOSINT 
+$ pip3 install -r requirements.txt
 ````
 
-Votre outil est désormais prêt à fonctionner.
+L'outil est désormais prêt à fonctionner.
 
 ####  1.3.3 Utilisation 
 
-Pour son utilisation, nous devons déjà possédé des pseudo instagram ou non pour vérifier si le compte existe. 
+Pour son utilisation, nous devons déjà posséder des pseudos instagram pour vérifier si le compte existe. 
 
 #### 1.3.4 Démonstration
 
 ##### Compte inexistant 
 
-Nous avons testé avec un compte inexistant pour voir comment réagit le programme.
+Nous avons testé avec un compte inexistant pour voir comment réagit le programme et nous constatons que l'outil indique ne pas trouver l'utilisateur recherché : 
 
 ![](images/inst_404.png)
 
-### Compte d'une personne normale  
+##### Compte d'une personne normale  
+
+En essayant d'utiliser instagramOSINT sur le nom d'utilisateur d'un membre du groupe, nous trouvons effectivement toutes les informations disponibles sur son compte : 
 
 ![](images/inst_jerome_trailer.png)
 
-##### Compte plus connu
+##### Compte d'une personne connue
 
-Les avantages d'un compte plus connu sont les informations supplémentaires que l'on peut avoir. Un URL externe, la catégorie de business. 
+Les avantages d'un compte plus connu sont les informations supplémentaires que l'on peut avoir. Une URL externe et la catégorie de business, par exemple. 
 
 ![](images/inst_pi.png)
 
 ##### Récupération d'images
 
-On peut voir que toutes les images présentent sur ce compte seront téléchargées localement.
+On peut voir que toutes les images présentes sur ce compte sont téléchargées localement grâce à l'option `--downloadPhotos`.
 
 ![](images/inst_pic.png)
 
 #### 1.3.5 Conclusion 
 
-L'utilité principale est bien évidemment la récolte d'informations pour par exemple créer un faux compte pour piéger une victime. Les informations peuvent aussi directement nous servir pour en apprendre plus sur la personne visée. 
+L'utilité principale est bien évidemment la récolte d'informations pour, par exemple, créer un faux compte pour piéger une victime. Les informations peuvent aussi directement nous servir pour en apprendre plus sur la personne visée. 
 
-L'avantage de cette outil, c'est qu'on peut modifier le script python pour l'adapter à nos besoins (ex: itérer sur une liste de nom d'utilisateurs). Mais cela reste difficile d'accès car le script n'est pas ou peu documenté. De plus, il n'est plus maintenu, donc si instagram venait à changer ses interfaces, cet outil ne servirait plus à rien.
+L'avantage de cet outil, c'est qu'on peut modifier le script python pour l'adapter à nos besoins (par exemple, pour itérer sur une liste de noms d'utilisateurs). Mais cela reste difficile d'accès car le script n'est que peu documenté. De plus, il n'est plus maintenu, donc si instagram venait à changer ses interfaces, cet outil ne servirait plus à rien.
 
-Pour la petite anecdotes, nous avons réparer le script à partir des Issues. 
+Pour la petite anecdote, nous avons réparé le script à partir des `issues`, et c'est pour cela que le repo Github à cloner provient de notre compte. 
 
 ### 1.4 Sherlock
 
