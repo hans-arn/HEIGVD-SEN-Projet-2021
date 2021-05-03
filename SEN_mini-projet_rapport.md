@@ -320,6 +320,7 @@ Liens utiles :
 - https://www.facebook.com/abraham.rubinstein
 - https://www.instagram.com/abrubinstein/?hl=fr
 - https://www.linkedin.com/in/abraham-rubinstein-091541/
+- https://twitter.com/abrubinstein?lang=fr
 
 
 
@@ -333,6 +334,17 @@ Idées :
 - email depuis une adresse de l'epfl à propos de recherches sur l'aviation
 - faux compte instagram/facebook d'aviation organisant un concours ->à créer maintenant
 - envoi d'un malware pour récupérer les credentials du prof pour accéder à GAPS et modifier les notes (installer un keylogger sur le pc via un mail de spearphishing ?)
+- envoi d'un mail de la part de cyberlearn "Message envoyé sur le forum nanana" pour que le prof se connecte et entre ses credentials -> possible de se connecter ensuite sur gaps avec
+
+Hobbies : 
+
+- aime les produits Apple : giveaway ? concours ?
+- aime Elon Musk et SpaceX, NASA
+- a aimé la série Stranger Things, Mr Robot, Harry Potter, Retour vers le Futur, le film "The Woman in Red" avec Gene Wilder
+
+Info :
+
+- a voulu être ingénieur dès l'âge de 8ans en voyant un ordi Apple
 
 ### 2.1 Choix
 
