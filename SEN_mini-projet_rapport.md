@@ -308,6 +308,32 @@ La recommandation que nous faisons est de suivre le développement de l'outil et
 
 ## 2 Recherche d'informations sur une cible
 
+Cible : Abraham Scharf Rubinstein
+
+Liens utiles :
+
+- https://www.local.ch/fr/d/ecublens-vd/1024/rubinstein-abraham-fuGsVoQNYYLnD5WF15pddg
+- http://iict.heig-vd.ch/team/show/18/rubinstein-scharf-abraham/
+- https://avisdexperts.ch/experts/abraham_rubinstein_scharf
+- https://www.epfl.ch/labs/emc/history/history-events/page-97381-en-html/
+- https://scholar.google.fr/citations?user=aGSnf_cAAAAJ&hl=fr
+- https://www.facebook.com/abraham.rubinstein
+- https://www.instagram.com/abrubinstein/?hl=fr
+- https://www.linkedin.com/in/abraham-rubinstein-091541/
+
+
+
+Fin des études obligatoires en 1988 à U.E.N. José Ramon Yepez, à Maracaibo (Venezuela)
+
+Anniversaire : 14 septembre ?
+
+Idées : 
+
+- faux bon Qoqa pour un vol en avion 
+- email depuis une adresse de l'epfl à propos de recherches sur l'aviation
+- faux compte instagram/facebook d'aviation organisant un concours ->à créer maintenant
+- envoi d'un malware pour récupérer les credentials du prof pour accéder à GAPS et modifier les notes (installer un keylogger sur le pc via un mail de spearphishing ?)
+
 ### 2.1 Choix
 
 justification du choix de cible
