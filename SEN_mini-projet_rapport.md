@@ -321,12 +321,8 @@ Liens utiles :
 - https://www.instagram.com/abrubinstein/?hl=fr
 - https://www.linkedin.com/in/abraham-rubinstein-091541/
 - https://twitter.com/abrubinstein?lang=fr
-
-
-
-Fin des études obligatoires en 1988 à U.E.N. José Ramon Yepez, à Maracaibo (Venezuela)
-
-Anniversaire : 14 septembre ?
+- http://abrahamrubinstein.blogspot.com/
+- https://disqus.com/by/abrahamrubinstein/
 
 Idées : 
 
@@ -348,27 +344,34 @@ Info :
 
 ### 2.1 Choix
 
-justification du choix de cible
+Le choix de la cible s'explique par le fait que nous possédons déjà des informations de base au travers des contacts qu'on a eut avec lui. De plus, nous pourrions avoir accès à des données sensibles qui nous permettraient de réussir sans problème les tests de SEN. Ces informations pourraient être des accès à la plateforme GAPS, à son drive personnel pour avoir accès aux tests de la matière SEN.
 
 ### 2.2 Eléments découverts
 
 ### 2.3 Portrait de la cible 
 
-(caractéristiques, vulnérabilités, vecteurs d'attaque, conclusions)
+Nous savons que la cible est un homme né un 14 septembre qui a finit ses études obligatoires en 1988 à U.E.N. José Ramon Yepez, à Maracaibo (Venezuela). On a pu apprendre à travers ces différents profils de réseaux sociaux qu'il est fan de produit Apple, d'Elon Musk (en particulier SpaceX et NASA). On sait aussi qu'il a un attrait pour la série Stranger Things et les filmes Mr Robot, Harry Potter, Retour vers le Futur et "The Woman in Red" avec Gene Wilder.
+
+La cible a fait une partie de ces études d'ingénierie à l'EPFL. 
 
 ## 3 Scénario d'attaque
 
 ### 3.1 Objectif de l'attaque 
 
-(vol d'info, d'argent, malwares, ...)
+- Vol d'information lié à son activité de professeur à l'HEIG
+- Modification des notes des élèves de l'HEIG 
 
 ### 3.2 Vecteur(s) d'attaque 
 
-(réseau social, e-mail, ...)
+- Réseau social Instagram via un lien malicieux
+- Email forgé
 
 ### 3.3 Payload de l'attaque 
 
-(site web, fichier infecté, ...)
+la payload serait constituée de :
+
+- Un lien sur un faux site qui nous permettrait de récupérer potentiellement ses identifiants
+- (Installation d'un Keyloger depuis un lien contrôlé par nos soins. exemple: un pdf à téléchargé, et en l'ouvrant cela activerait un keylogger )
 
 ## 4 Simulation d'attaque
 
