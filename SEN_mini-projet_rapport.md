@@ -358,6 +358,8 @@ A travers ses diverses publications sur le réseau social Facebook, nous déduis
 
 M. Rubinstein a fait ses études obligatoires de 1986 à 1988 à U.E.N. José Ramon Yepez, à Maracaibo (Venezuela), il a obtenu son Bachelor d'ingénierie en électricité à l'université de Zulia, toujours à Macaraibo. La cible a ensuite obtenu son doctorat de l'EPFL en 2004, puis y a travaillé encore deux ans (jusqu'en 2006) sur le sujet `fast algorithms and parallel methods for computational electromagnetics`. Il enseigne à la HEIG-VD depuis 2007.
 
+Il est toujours disponible pour aider ses étudiants, il est atteignable très rapidement en cas de questions. 
+
 M. Rubinstein est intervenu à deux reprises sur la chaîne télévisée RTS: 
 
 - En 2018, dans l'émission `On en parle` sur le sujet des gestionnaires de mots de passe
@@ -365,31 +367,61 @@ M. Rubinstein est intervenu à deux reprises sur la chaîne télévisée RTS:
 
 Il a également publié plus d'une quinzaine de papiers scientifiques dans des revues spécialisées et présentés lors de conférences internationales.
 
-
+Notre cible est donc très calée sur le sujet de la sécurité informatique, cela rend l'attaque plus difficile. Mais nous pouvons compter sur sa disponibilité, sa gentillesse et son désir d'enseigner les sujets qui le passionnent à ses étudiants pour que notre attaque réussisse. 
 
 ## 3 Scénario d'attaque
 
-- envoi d'un malware pour récupérer les credentials du prof pour accéder à GAPS et modifier les notes (installer un keylogger sur le pc via un mail de spearphishing ?)
-- envoi d'un mail de la part de cyberlearn "Message envoyé sur le forum nanana" pour que le prof se connecte et entre ses credentials -> possible de se connecter ensuite sur gaps avec
+Pour ce scénario d'attaque, nous partons du principe que le professeur Rubinstein n'a pas activé l'authentification à deux facteurs sur son compte Github.
 
 ### 3.1 Objectif de l'attaque 
 
-L'objectif principal de l'attaque est d'accéder au registre de notes des étudiants (GAPS) pour pouvoir éventuellement les améliorer. 
+L'objectif principal de l'attaque est d'accéder au compte Github du professeur, car c'est le vecteur utilisé pour donner les laboratoires aux étudiants. 
 
-En obtenant l'identifiant et le mot de passe du professeur pour accéder aux services de la HEIG-VD, nous pourrions nous connecter sur GAPS à sa place, sur sa boite mail, ainsi que sur Cyberlearn. 
+Grâce à cette attaque et à l'obtention des identifiants de connexion du professeur sur Github, nous pourrons accéder directement aux données des laboratoires et les commencer plus rapidement. 
 
-Nous pourrions ainsi récupérer des informations privées et personnelles, liées à son métier de professeur à la HEIG-VD et des informations de cours en avant-première.
+Nous pourrons également potentiellement accéder aux versions complétées des laboratoires et récupérer les réponses que le professeur attend. Cela nous assurerait de très bonnes notes sans nous demander de travail.
 
 ### 3.2 Vecteur(s) d'attaque 
 
-- Email forgé
+Pour procéder à l'attaque, nous créons un e-mail forgé grâce à l'outil GoPhish, présenté dans la première partie de ce rapport. 
+
+Cet e-mail va rediriger le professeur sur la page de connexion Github et l'inciter à entrer ses identifiants. 
+
+L'e-mail sera envoyé de la part d'un étudiant connu du professeur, qui demandera de l'aide pour un projet et donnera un lien sur ledit projet sur Github. Si le professeur clique sur le lien et se retrouve sur la page de connexion Github, il ne se doutera de rien et entrera ses identifiants pour se connecter et accéder au projet.
 
 ### 3.3 Payload de l'attaque 
 
-la payload serait constituée de :
+La payload sera constituée d'un message d'appel à l'aide de la part d'un étudiant en difficulté sur un projet, ainsi qu'un lien vers le repo Github contenant le projet en question.
 
-- Un lien sur un faux site qui nous permettrait de récupérer potentiellement ses identifiants
-- (Installation d'un Keyloger depuis un lien contrôlé par nos soins. exemple: un pdf à télécharger, et en l'ouvrant cela activerait un keylogger )
+Le mail en format HTML ressemble à celui-ci : 
+
+```html
+<html>
+<head>
+	<title></title>
+</head>
+
+<body>
+<p> 
+Bonjour Monsieur Rubinstein, <br />
+
+J'espère que vous allez bien ! <br />
+
+Je me permets de vous écrire pour vous demander un peu d'aide sur le laboratoire de SWI... Je n'ai pas bien compris l'étape 2 "Attaque WPA Entreprise (hostapd)", j'ai démarré le travail mais je ne suis pas sûre de comment procéder. <br />
+
+J'espère que ça ne vous gêne pas, mais je vous envoie ci-dessous le lien sur le repo Github contenant mon rapport, car j'y ai décrit mon problème avec des captures d'écran et des explications ! <br />
+
+Laboratoire SWI: <a href="{{.URL}}">repo Git</a> <br />
+
+Merci d'avance pour votre aide ! <br />
+
+Bonne journée, <br />
+Cassandre
+</p>
+
+</body>
+</html>
+```
 
 ## 4 Simulation d'attaque
 
