@@ -308,10 +308,19 @@ La recommandation que nous faisons est de suivre le développement de l'outil et
 
 ## 2 Recherche d'informations sur une cible
 
-Cible : Abraham Scharf Rubinstein
+Notre cible dans le cadre de ce projet de `social enginneering` est notre professeur: Abraham Scharf Rubinstein.
 
-Liens utiles :
+### 2.1 Choix
 
+Le choix de la cible s'explique par le fait que nous possédons déjà des informations de base au travers des contacts que nous avons déjà eu avec lui dans le cadre de nos cours à la HEIG-VD. 
+
+Nous souhaitons essayer d'accéder à des données sensibles (notes, par exemple) qui nous permettraient de réussir sans problème les tests de SEN. Nous pensons notamment obtenir un accès à la plateforme GAPS et au drive personnel du professeur pour avoir accès aux tests de la matière SEN.
+
+### 2.2 Eléments découverts
+
+Nous avons effectué des recherches sur Internet, ainsi qu'avec les divers outils de recherche mentionnés dans la première partie de ce rapport. Nous avons découvert un certain nombre d'informations, au travers de réseaux sociaux, de sites professionnels (écoles, universités, ...). 
+
+```
 - https://www.local.ch/fr/d/ecublens-vd/1024/rubinstein-abraham-fuGsVoQNYYLnD5WF15pddg
 - http://iict.heig-vd.ch/team/show/18/rubinstein-scharf-abraham/
 - https://avisdexperts.ch/experts/abraham_rubinstein_scharf
@@ -323,47 +332,56 @@ Liens utiles :
 - https://twitter.com/abrubinstein?lang=fr
 - http://abrahamrubinstein.blogspot.com/
 - https://disqus.com/by/abrahamrubinstein/
-
-Idées : 
-
-- faux bon Qoqa pour un vol en avion 
-- email depuis une adresse de l'epfl à propos de recherches sur l'aviation
-- faux compte instagram/facebook d'aviation organisant un concours ->à créer maintenant
-- envoi d'un malware pour récupérer les credentials du prof pour accéder à GAPS et modifier les notes (installer un keylogger sur le pc via un mail de spearphishing ?)
-- envoi d'un mail de la part de cyberlearn "Message envoyé sur le forum nanana" pour que le prof se connecte et entre ses credentials -> possible de se connecter ensuite sur gaps avec
+```
 
 Hobbies : 
 
-- aime les produits Apple : giveaway ? concours ?
+- aime les produits Apple
 - aime Elon Musk et SpaceX, NASA
-- a aimé la série Stranger Things, Mr Robot, Harry Potter, Retour vers le Futur, le film "The Woman in Red" avec Gene Wilder
+- aime la technologie et la sécurité des technologies
+- a aimé les films et séries: Stranger Things, Mr Robot, Harry Potter, Retour vers le Futur, "The Woman in Red" avec Gene Wilder, Big Bang Theory, Family Guy, ...
+- apprécie les petits avions, l'aviation
 
 Info :
 
-- a voulu être ingénieur dès l'âge de 8ans en voyant un ordi Apple
-
-### 2.1 Choix
-
-Le choix de la cible s'explique par le fait que nous possédons déjà des informations de base au travers des contacts qu'on a eut avec lui. De plus, nous pourrions avoir accès à des données sensibles qui nous permettraient de réussir sans problème les tests de SEN. Ces informations pourraient être des accès à la plateforme GAPS, à son drive personnel pour avoir accès aux tests de la matière SEN.
-
-### 2.2 Eléments découverts
+- a voulu être ingénieur dès l'âge de 8 ans en voyant un ordi Apple
 
 ### 2.3 Portrait de la cible 
 
-Nous savons que la cible est un homme né un 14 septembre qui a finit ses études obligatoires en 1988 à U.E.N. José Ramon Yepez, à Maracaibo (Venezuela). On a pu apprendre à travers ces différents profils de réseaux sociaux qu'il est fan de produit Apple, d'Elon Musk (en particulier SpaceX et NASA). On sait aussi qu'il a un attrait pour la série Stranger Things et les filmes Mr Robot, Harry Potter, Retour vers le Futur et "The Woman in Red" avec Gene Wilder.
+La cible est un homme né un 14 septembre, originaire du Venezuela. Il a emménagé à Chavannes-Pres-Renens en juin 2000 et nous savons qu'il réside actuellement à Ecublens, plus précisément au Chemin des Perrettes 3. Son numéro de téléphone privé est le 079 631 33 15 et son adresse e-mail enregistrée sur le site `local.ch` est celle de la HEIG : abraham.rubinstein@heig-vd.ch. 
 
-La cible a fait une partie de ces études d'ingénierie à l'EPFL. 
+M. Rubinstein parle l'espagnol en première langue, ainsi que l'anglais et le français couramment. 
+
+Nous avons pu apprendre à travers ses différents profils de réseaux sociaux qu'il est fan de produit Apple, d'Elon Musk (en particulier SpaceX et NASA). On sait aussi qu'il a un attrait pour la série "Stranger Things" et les films "Mr Robot", "Harry Potter", "Retour vers le Futur" et "The Woman in Red" avec Gene Wilder. En somme, M. Rubinstein apprécie la pop culture, avec des séries et des films modernes. 
+
+A travers ses diverses publications sur le réseau social Facebook, nous déduisons que son caractère est plutôt généreux, il a partagé beaucoup de publications de collectes de fonds pour des personnes malades, notamment des enfants. 
+
+M. Rubinstein a fait ses études obligatoires de 1986 à 1988 à U.E.N. José Ramon Yepez, à Maracaibo (Venezuela), il a obtenu son Bachelor d'ingénierie en électricité à l'université de Zulia, toujours à Macaraibo. La cible a ensuite obtenu son doctorat de l'EPFL en 2004, puis y a travaillé encore deux ans (jusqu'en 2006) sur le sujet `fast algorithms and parallel methods for computational electromagnetics`. Il enseigne à la HEIG-VD depuis 2007.
+
+M. Rubinstein est intervenu à deux reprises sur la chaîne télévisée RTS: 
+
+- En 2018, dans l'émission `On en parle` sur le sujet des gestionnaires de mots de passe
+- En 2019 dans l'émission `A bon entendeur` sur le sujet des paiements sans contact
+
+Il a également publié plus d'une quinzaine de papiers scientifiques dans des revues spécialisées et présentés lors de conférences internationales.
+
+
 
 ## 3 Scénario d'attaque
 
+- envoi d'un malware pour récupérer les credentials du prof pour accéder à GAPS et modifier les notes (installer un keylogger sur le pc via un mail de spearphishing ?)
+- envoi d'un mail de la part de cyberlearn "Message envoyé sur le forum nanana" pour que le prof se connecte et entre ses credentials -> possible de se connecter ensuite sur gaps avec
+
 ### 3.1 Objectif de l'attaque 
 
-- Vol d'information lié à son activité de professeur à l'HEIG
-- Modification des notes des élèves de l'HEIG 
+L'objectif principal de l'attaque est d'accéder au registre de notes des étudiants (GAPS) pour pouvoir éventuellement les améliorer. 
+
+En obtenant l'identifiant et le mot de passe du professeur pour accéder aux services de la HEIG-VD, nous pourrions nous connecter sur GAPS à sa place, sur sa boite mail, ainsi que sur Cyberlearn. 
+
+Nous pourrions ainsi récupérer des informations privées et personnelles, liées à son métier de professeur à la HEIG-VD et des informations de cours en avant-première.
 
 ### 3.2 Vecteur(s) d'attaque 
 
-- Réseau social Instagram via un lien malicieux
 - Email forgé
 
 ### 3.3 Payload de l'attaque 
@@ -371,7 +389,7 @@ La cible a fait une partie de ces études d'ingénierie à l'EPFL.
 la payload serait constituée de :
 
 - Un lien sur un faux site qui nous permettrait de récupérer potentiellement ses identifiants
-- (Installation d'un Keyloger depuis un lien contrôlé par nos soins. exemple: un pdf à téléchargé, et en l'ouvrant cela activerait un keylogger )
+- (Installation d'un Keyloger depuis un lien contrôlé par nos soins. exemple: un pdf à télécharger, et en l'ouvrant cela activerait un keylogger )
 
 ## 4 Simulation d'attaque
 
