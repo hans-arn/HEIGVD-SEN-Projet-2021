@@ -520,8 +520,10 @@ except smtplib.SMTPRecipientsRefused:
 
 ### 4.2 Comportements de la cible
 
-(vis-à-vis de l'attaque, réactions, actions ...)
+Comme dit dans notre cours de social engineering, une demande d'une personne qui oblige la cible à agir dans l'urgence permet d'atténuer sa vigilance. C'est exactement ce que nous essayons de faire dans ce cas. Une élève en détresse qui a un besoin urgent d'aide pour un laboratoire qu'elle doit rendre rapidement fera en sorte d'éviter la méfiance de notre professeur. 
+
+Dans notre cas, il ne pensera pas à regarder ce que le script `run_lab.sh` effectue étant donné qu'il va vouloir déjà analyser l'erreur dans le laboratoire. En exécutant le script, il va lancer notre keylogger. Nous sommes parti du principe qu'il ne remarquera pas dans l'immédiat le but malicieux de notre programme. Quand il le découvrira, il sera trop tard le fichier avec ses frappes au clavier nous aura été envoyé. 
 
 ### 4.3 Résultats obtenus
 
- (vs. résultats attendus)
+Notre but est d'obtenir les accès aux différentes plateformes comme **cyberlearn** et **gaps**, mais il est fort probable que nous obtenions d'autres informations en fonctions du temps que le keylogger reste actif.
