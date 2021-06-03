@@ -507,7 +507,16 @@ except smtplib.SMTPRecipientsRefused:
 
 ### 4.1 Description de l'attaque 
 
-(étapes)
+1. Repérage d'un laboratoire pouvant poser des problèmes aux étudiants
+2. Création d'un repo Github avec :
+   1. Les éléments du `keylogger` (code et envoi de mail), 
+   2. Un long script effectuant beaucoup d'opérations concernant le laboratoire (cracking de mots de passe, par exemple),
+   3. Le script de lancement du `keylogger` confondu avec un script lançant le laboratoire.
+3. Rédaction du mail de "panique" avec le lien du repo Github inclus et la demande d'exécution du script malveillant
+4. Envoi du mail
+5. Récupération des identifiants confidentiels du professeur
+
+![](images/mail_attaque.JPG)
 
 ### 4.2 Comportements de la cible
 
