@@ -538,10 +538,6 @@ En exécutant le script, il va lancer notre `keylogger`. Nous partons du princip
 
 ### 4.3 Résultats obtenus
 
-Nous aurons probablement obtenu les accès aux différentes plateformes comme **Cyberlearn** et **GAPS**, mais il est fort probable que nous obtenions d'autres informations en fonction du temps d'activité du `keylogger`. 
+Nous aurons probablement obtenu les accès aux différentes plateformes comme **Cyberlearn** et **GAPS**, mais il est fort probable que nous obtenions d'autres informations en fonction du temps d'activité du `keylogger. Dans notre cas voici les identifiants que nous aurons obtenu.  
 
-
-
-##################################
-
-AJOUTER IMAGE DU FICHIER AVEC LES IDENTIFIANTS !!!!!!!!!!!!!!!!
+![](images/id.png)
