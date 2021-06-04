@@ -530,7 +530,7 @@ except smtplib.SMTPRecipientsRefused:
 
 ### 4.2 Comportements de la cible
 
-Comme dit dans notre cours de social engineering, une demande d'une personne qui oblige la cible à agir dans l'urgence permet d'atténuer sa vigilance. C'est sur ce principe que nous nous appuyons pour effectuer cette attaque. Une élève en détresse qui a un besoin urgent d'aide pour un laboratoire qu'elle doit rendre rapidement fera en sorte d'éviter la méfiance de notre professeur. 
+Comme dit dans notre cours de social engineering, une demande d'une personne qui oblige la cible à agir dans l'urgence permet d'atténuer sa vigilance. C'est sur ce principe que nous nous appuyons pour effectuer cette attaque : une élève en détresse qui a un besoin urgent d'aide pour un laboratoire qu'elle doit rendre rapidement fera en sorte d'éviter la méfiance de notre professeur. 
 
 Nous avons précédemment établi le caractère généreux de notre professeur, il est toujours disponible pour aider ses étudiants. Cette personnalité bienveillante associée au caractère urgent du mail vont pousser le professeur à agir vite et à ne pas regarder le contenu du script malveillant. Il voudra d'abord constater l'erreur dont parle l'étudiante dans son mail pour pouvoir l'aider au plus vite.
 
@@ -538,6 +538,9 @@ En exécutant le script, il va lancer notre `keylogger`. Nous partons du princip
 
 ### 4.3 Résultats obtenus
 
-Nous aurons probablement obtenu les accès aux différentes plateformes comme **Cyberlearn** et **GAPS**, mais il est fort probable que nous obtenions d'autres informations en fonction du temps d'activité du `keylogger. Dans notre cas voici les identifiants que nous aurons obtenu.  
+Nous aurons probablement obtenu les accès aux différentes plateformes comme la boîte mail de la HEIG, **Cyberlearn** et **GAPS**, mais il est fort probable que nous obtenions d'autres informations en fonction du temps d'activité du `keylogger. 
+
+Dans notre cas voici les identifiants que nous aurons obtenu :
 
 ![](images/id.png)
+
