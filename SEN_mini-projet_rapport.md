@@ -16,7 +16,7 @@ Cet outil a d'abord été pensé dans l'optique de tester les réactions de dest
 
 #### 1.1.2 Installation
 
-Comme établi précédemment, l'installation se veut très facile. La procédure suivante a été testée sur une machine Ubuntu 20.04 : 
+Comme établi précédemment, l'installation se veut très facile. La procédure suivante a été testée sur une machine Ubuntu 20.04 et manjaro Ornara 21.0.5 : 
 
 - Télécharger le fichier .zip depuis le repo Github : https://github.com/gophish/gophish/releases
 - Créer un répertoire `gophish` 
@@ -193,7 +193,7 @@ L'outil a été testé sur un environnement GNU/Linux mais étant donné qu'il s
 
 #### 1.3.2 Installation
 
-Ce programme nécessite **python 3.6** au minimum (en cas de besoin, téléchargez [python3](https://www.python.org/downloads/)). L'installation consiste à cloner le repo Github puis à installer les dépendances contenues dans le fichier `requirements.txt`. 
+Ce programme nécessite **python 3.6** au minimum (en cas de besoin, téléchargez [python3](https://www.python.org/downloads/)). L'installation consiste à cloner le repository Github puis à installer les dépendances contenues dans le fichier `requirements.txt`. 
 
 ````shell
 // Commandes à effectuer : 
@@ -241,13 +241,13 @@ L'utilité principale est bien évidemment la récolte d'informations pour, par 
 
 L'avantage de cet outil, c'est qu'on peut modifier le script python pour l'adapter à nos besoins (par exemple, pour itérer sur une liste de noms d'utilisateurs). Mais cela reste difficile d'accès car le script n'est que peu documenté. De plus, il n'est plus maintenu, donc si instagram venait à changer ses interfaces, cet outil ne servirait plus à rien.
 
-Pour la petite anecdote, nous avons réparé le script à partir des `issues`, et c'est pour cela que le repo Github à cloner provient de notre compte. 
+Pour la petite anecdote, nous avons réparé le script à partir des `issues`, et c'est pour cela que le repository Github à cloner provient de notre compte. 
 
 ### 1.4 Sherlock
 
 #### 1.4.1 Introduction
 
-Sherlock est un outil gratuit et opensource, disponible sur Github. Il permet de rechercher des noms d'utilisateur sur différents sites nécessitant une authentification. En explorant le repo Github, on peut voir que la communauté est très active et que des `commit` sont faits très régulièrement. L'outil est encore en développement et cela implique que certains bugs peuvent encore arriver. 
+Sherlock est un outil gratuit et opensource, disponible sur Github. Il permet de rechercher des noms d'utilisateur sur différents sites nécessitant une authentification. En explorant le repository Github, on peut voir que la communauté est très active et que des `commit` sont faits très régulièrement. L'outil est encore en développement et cela implique que certains bugs peuvent encore arriver. 
 
 Le problème le plus récurrent est l'apparition de faux positifs : Sherlock indique qu'un compte correspondant au nom d'utilisateur fourni existe et donne un lien sur ce compte mais en suivant ce lien, le site indique qu'aucun compte sous ce nom n'existe. 
 
@@ -292,7 +292,7 @@ Il peut être nécessaire de modifier le fichier `sites.md` pour ajouter des sit
 
 #### 1.4.4 Démonstration
 
-En entrant la commande indiquée au paragraphe précédent et en indiquant un nom d'utilisateur (ici, `c.woj`), le script effectue sa recherche en concaténant les liens qu'il connait pour les sites recensés dans le fichier `sites.md` et le nom d'utilisateur. 
+En entrant la commande indiquée au paragraphe précédent et en indiquant un nom d'utilisateur (ici, `c.woj`), le script effectue sa recherche en concaténant les liens qu'il connaît pour les sites recensés dans le fichier `sites.md` et le nom d'utilisateur. 
 
 ![](images/SEN_projet_Sherlock1.png)
 
@@ -316,7 +316,7 @@ Le choix de la cible s'explique par le fait que nous possédons déjà des infor
 
 Nous souhaitons essayer d'accéder à des données sensibles (notes, par exemple) qui nous permettraient de réussir sans problème les tests de SEN. Nous pensons notamment obtenir un accès à la plateforme GAPS et au drive personnel du professeur pour avoir accès aux tests de la matière SEN.
 
-### 2.2 Eléments découverts
+### 2.2 Éléments découverts
 
 Nous avons effectué des recherches sur Internet, ainsi qu'avec les divers outils de recherche mentionnés dans la première partie de ce rapport. Nous avons découvert un certain nombre d'informations, au travers de réseaux sociaux, de sites professionnels (écoles, universités, ...). 
 
@@ -350,7 +350,7 @@ Info :
 
 La cible est un homme né un 14 septembre, originaire du Venezuela. Il a emménagé à Chavannes-Pres-Renens en juin 2000 et nous savons qu'il réside actuellement à Ecublens, plus précisément au Chemin des Perrettes 3. Son numéro de téléphone privé est le 079 631 33 15 et son adresse e-mail enregistrée sur le site `local.ch` est celle de la HEIG : abraham.rubinstein@heig-vd.ch. 
 
-M. Rubinstein parle l'espagnol en première langue, ainsi que l'anglais et le français couramment. 
+M. Rubinstein parle l'espagnol car cela est sa langue maternelle, ainsi que l'anglais et le français couramment. 
 
 Nous avons pu apprendre à travers ses différents profils de réseaux sociaux qu'il est fan de produit Apple, d'Elon Musk (en particulier SpaceX et NASA). On sait aussi qu'il a un attrait pour la série "Stranger Things" et les films "Mr Robot", "Harry Potter", "Retour vers le Futur" et "The Woman in Red" avec Gene Wilder. En somme, M. Rubinstein apprécie la pop culture, avec des séries et des films modernes. 
 
@@ -379,7 +379,7 @@ Nous pourrons également accéder à GAPS avec les identifiants du professeur po
 
 Des préjudices pourraient être portés au professeur en obtenant aussi ses identifiants pour se connecter aux divers réseaux sociaux : nous pourrions porter atteinte à sa réputation, mais ce n'est pas l'objectif de cette attaque en particulier.
 
-Eventuellement, des informations d'e-banking pourraient être obtenues grâce à cette attaque, mais ce n'est pas non plus l'objectif principal.
+Éventuellement, des informations d'e-banking pourraient être obtenues grâce à cette attaque, mais ce n'est pas non plus l'objectif principal.
 
 ### 3.2 Vecteur(s) d'attaque 
 
@@ -511,14 +511,14 @@ except smtplib.SMTPRecipientsRefused:
 
    > Dans le cas présent, nous avons choisi le dernier laboratoire de SWI, car le cours est dispensé par le professeur Rubinstein en parallèle du cours de SEN. Le professeur est donc la personne la plus apte à nous aider sur notre "problème".
 
-2. Création d'un repo Github avec :
+2. Création d'un repository Github avec :
    1. Les éléments du `keylogger` (code et envoi de mail), 
    2. Un long script effectuant beaucoup d'opérations concernant le laboratoire (cracking de mots de passe, par exemple),
    3. Le script de lancement du `keylogger` confondu avec un script lançant le laboratoire.
 
-   > Le lien vers ce repo Github est : https://github.com/hans-arn/HEIGVD-SWI-Labo4-WPA-Entreprise.git. Tous les scripts se trouvent dessus.
+   > Le lien vers ce repository Github est : https://github.com/hans-arn/HEIGVD-SWI-Labo4-WPA-Entreprise.git. Tous les scripts se trouvent dessus.
 
-3. Rédaction du mail de "panique" avec le lien du repo Github inclus et la demande d'exécution du script malveillant
+3. Rédaction du mail de "panique" avec le lien du repository Github inclus et la demande d'exécution du script malveillant
 
    > Une capture d'écran du mail se trouve ci-dessous et le texte se trouve au paragraphe 3.3.
 
